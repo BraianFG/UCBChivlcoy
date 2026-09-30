@@ -3,18 +3,10 @@
 
   <!-- Página principal -->
   <url>
-    <loc>https://TU-DOMINIO.com/</loc>
+    <loc>https://ucbchivilcoy.com.ar/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-
-  <!-- Himnario (PDF) -->
-  <url>
-    <loc>https://TU-DOMINIO.com/himnario.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
 
 </urlset>
