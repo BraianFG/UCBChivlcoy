@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuestra Fe — Iglesia Centro Bíblico Chivilcoy</title>
+  <meta name="description" content="Las cinco solas de la Reforma: Sola Scriptura, Sola Gratia, Sola Fide, Solus Christus y Soli Deo Gloria. Declaración de fe de la Iglesia Centro Bíblico Chivilcoy." />
+
+  <meta name="theme-color" content="#E85D04" />
+  <meta name="msapplication-TileColor" content="#E85D04" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/x-icon" href="/faviconIgle.ico" />
+  <link rel="apple-touch-icon" href="/faviconIgle.ico" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nuestra Fe — Iglesia Centro Bíblico Chivilcoy" />
+  <meta property="og:description" content="Las cinco solas de la Reforma que guían nuestra fe y práctica." />
+  <meta property="og:image" content="https://ucbchivilcoy.com.ar/iglesia.jpg" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Iglesia Centro Bíblico Chivilcoy" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange: #E85D04;
+      --orange-dark: #D9480F;
+      --orange-light: #F48C06;
+      --orange-soft: #FFF4EB;
+      --white: #FFFFFF;
+      --off-white: #FFFBF7;
+      --text: #1A1A1A;
+      --text-muted: #5A5A5A;
+      --gray: #F5F5F5;
+      --shadow: 0 10px 40px rgba(232, 93, 4, 0.12);
+      --radius: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--off-white);
+      line-height: 1.6;
+    }
+
+    /* ========== NAV ========== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232, 93, 4, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .logo-nav .cross {
+      width: 28px;
+      height: 28px;
+      background: var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--orange);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: white !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark);
+      color: white !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    /* ========== PAGE HERO ========== */
+    .page-hero {
+      background: linear-gradient(160deg, var(--orange) 0%, var(--orange-dark) 55%, #C2410C 100%);
+      color: white;
+      text-align: center;
+      padding: 7.5rem 1.5rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ========== QUICK NAV ========== */
+    .quick-nav {
+      background: white;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: sticky;
+      top: 58px;
+      z-index: 90;
+    }
+
+    .quick-nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .quick-nav-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .quick-nav a {
+      flex-shrink: 0;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: 50px;
+      background: var(--orange-soft);
+      border: 1px solid rgba(232, 93, 4, 0.15);
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .quick-nav a:hover {
+      background: var(--orange);
+      color: white;
+      border-color: var(--orange);
+    }
+
+    /* ========== CONTENT ========== */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .sola-section {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(232, 93, 4, 0.12);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      scroll-margin-top: 130px;
+    }
+
+    .sola-section .number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--orange);
+      color: white;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .sola-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      color: var(--orange);
+      margin-bottom: 0.35rem;
+      line-height: 1.25;
+    }
+
+    .sola-section .subtitle {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .sola-section .body {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .sola-section .body p {
+      margin-bottom: 1rem;
+    }
+
+    .sola-section .body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sola-section .refs {
+      margin-top: 1.25rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid rgba(232, 93, 4, 0.12);
+      font-size: 0.92rem;
+      color: var(--orange-dark);
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .sola-section .questions {
+      margin-top: 1rem;
+      padding: 1rem 1.15rem;
+      background: var(--orange-soft);
+      border-radius: 12px;
+      border-left: 4px solid var(--orange);
+    }
+
+    .sola-section .questions p {
+      margin-bottom: 0.65rem;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .sola-section .questions p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sola-section .questions strong {
+      color: var(--orange-dark);
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #1A1A1A;
+      color: rgba(255,255,255,0.75);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+
+    footer .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    footer .verse-footer {
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      opacity: 0.8;
+    }
+
+    footer .copy {
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    footer a {
+      color: var(--orange-light);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== WHATSAPP ========== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      animation: pulse-wa 2.5s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.55);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
+    }
+
+    .whatsapp-float .tooltip {
+      position: absolute;
+      right: 72px;
+      background: #1A1A1A;
+      color: white;
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .whatsapp-float:hover .tooltip {
+      opacity: 1;
+    }
+
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 1.5rem 1.5rem;
+        gap: 0.8rem;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .sola-section {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .whatsapp-float {
+        bottom: 18px;
+        right: 18px;
+        width: 56px;
+        height: 56px;
+      }
+
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .whatsapp-float .tooltip {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-nav">
+        <span class="cross">✝</span>
+        <span>Centro Bíblico Chivilcoy</span>
+      </a>
+      <button class="menu-toggle" id="menuBtn" aria-label="Menú">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#nosotros">Nosotros</a></li>
+        <li><a href="nuestra-fe.html" class="active">Nuestra Fe</a></li>
+        <li><a href="index.html#himnario">Himnario</a></li>
+        <li><a href="index.html#ubicacion">Ubicación</a></li>
+        <li><a href="index.html#contacto" class="nav-cta">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="page-hero-content">
+      <h1>Nuestra Fe</h1>
+      <p>Los cinco pilares de la Reforma que guían nuestra fe y práctica cristiana</p>
+    </div>
+  </header>
+
+  <!-- QUICK NAV -->
+  <div class="quick-nav">
+    <div class="quick-nav-inner">
+      <a href="#sola-scriptura">Sola Scriptura</a>
+      <a href="#sola-gratia">Sola Gratia</a>
+      <a href="#sola-fide">Sola Fide</a>
+      <a href="#solus-christus">Solus Christus</a>
+      <a href="#soli-deo-gloria">Soli Deo Gloria</a>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- 1. SOLA SCRIPTURA -->
+    <article class="sola-section" id="sola-scriptura">
+      <div class="number">1</div>
+      <h2>SOLA SCRIPTURA</h2>
+      <p class="subtitle">Solo la Escritura</p>
+      <div class="body">
+        <p>
+          Las Sagradas Escrituras del Antiguo y Nuevo Testamento son total y verbalmente inspiradas por Dios y sin equivocación alguna en sus documentos originales, y son de autoridad suprema y final en todo asunto de fe y práctica cristiana.
+        </p>
+      </div>
+      <p class="refs">2º Tim. 3:15-17 · 1º Ped. 1:22-23 · 2º Ped. 1:16-21</p>
+    </article>
+
+    <!-- 2. SOLA GRATIA -->
+    <article class="sola-section" id="sola-gratia">
+      <div class="number">2</div>
+      <h2>SOLA GRATIA</h2>
+      <p class="subtitle">Solo por Gracia</p>
+      <div class="body">
+        <p>
+          La salvación es por gracia solamente y no por las obras o méritos propios.
+        </p>
+      </div>
+      <p class="refs">Ef. 2:8-9 · Rom. 3:20-22 · Tito 3:5-7</p>
+    </article>
+
+    <!-- 3. SOLA FIDE -->
+    <article class="sola-section" id="sola-fide">
+      <div class="number">3</div>
+      <h2>SOLA FIDE</h2>
+      <p class="subtitle">Solo por Fe</p>
+      <div class="body">
+        <p>
+          Todos aquellos que creen en Él y le reciben, son justificados ante Dios solo a base de la fe en su sangre derramada.
+        </p>
+        <p>
+          Todo aquel que se arrepiente sinceramente de todos sus pecados y cree en el Señor Jesucristo recibiéndole por fe en su corazón, es justificado.
+        </p>
+        <p>
+          La salvación es por fe sin añadir nada.
+        </p>
+      </div>
+      <p class="refs">
+        Juan 3:16 · Rom. 3:24-25 · Ef. 2:13 · 1º Ped. 2:24<br>
+        Jn. 3:16 · Rom. 3:23-26 · Mat. 3:2 · Mr. 1:15 · Lc. 13:3 · Hch. 3:19 · 17:30<br>
+        Mat. 7:16-20 · punto IX de la Declaración
+      </p>
+    </article>
+
+    <!-- 4. SOLUS CHRISTUS -->
+    <article class="sola-section" id="solus-christus">
+      <div class="number">4</div>
+      <h2>SOLUS CHRISTUS</h2>
+      <p class="subtitle">Solo Cristo</p>
+      <div class="body">
+        <p>
+          Vino a obrar por nosotros una eterna y perfecta redención. Por ser perfecta nadie puede añadir nada ni para ayudar ni para completar la obra.
+        </p>
+        <p>
+          Fuera de Cristo y su obra completada una vez para siempre, no hay salvación.
+        </p>
+        <p>
+          En el plan de salvación lo repite: fuera del Señor Jesucristo y su obra completada una vez y para siempre, no puede haber salvación.
+        </p>
+      </div>
+      <p class="refs">
+        Jn. 19:30 · Heb. 9:12<br>
+        Jn. 14:6 · Heb. 4:12 · 10:43 · Jn. 3:36 · Apoc. 5:9<br>
+        Jn. 14:6 · Hch. 4:12 · 10:43 · Apoc. 5:9 · Heb. 4:14-16 · 5:10 · 10:10-12 · 14
+      </p>
+    </article>
+
+    <!-- 5. SOLI DEO GLORIA -->
+    <article class="sola-section" id="soli-deo-gloria">
+      <div class="number">5</div>
+      <h2>SOLI DEO GLORIA</h2>
+      <p class="subtitle">Solo a Dios la Gloria</p>
+      <div class="body">
+        <p>
+          Si existe alguna duda puede someterse a las siguientes preguntas:
+        </p>
+        <div class="questions">
+          <p><strong>a)</strong> 1º Cor. 10:31 — ¿Es para la gloria de Dios?</p>
+          <p><strong>b)</strong> Ef. 5:20 — ¿Podría dar gracias a Dios por ello?</p>
+          <p><strong>c)</strong> Col. 3:23 — ¿Puedo hacerlo o decirlo en el nombre del Señor Jesús?</p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">Iglesia Centro Bíblico Chivilcoy</div>
+    <p class="verse-footer">«Para alabanza de la gloria de su gracia» — Efesios 1:6</p>
+    <p class="copy">
+      <a href="index.html">Volver al inicio</a>
+      · © 2026 Iglesia Centro Bíblico Chivilcoy
+    </p>
+  </footer>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/5491131525465?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20la%20Iglesia%20Centro%20B%C3%ADblico%20Chivilcoy"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Escribinos por WhatsApp">
+    <span class="tooltip">Escribinos por WhatsApp</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+</body>
+</html>
