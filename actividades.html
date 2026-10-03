@@ -9,14 +9,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <title>Actividades — Iglesia Centro Bíblico Chivilcoy</title>
-  <meta name="description" content="Actividades y horarios de la Iglesia Centro Bíblico Chivilcoy. Cultos, estudios bíblicos y más." />
+  <meta name="description" content="Actividades y horarios de la Iglesia Centro Bíblico Chivilcoy. Domingos 19 hs y miércoles 20 hs. Ituzaingó 225, Chivilcoy." />
 
   <link rel="icon" type="image/x-icon" href="https://ucbchivilcoy.com.ar/faviconIgle.ico" />
   <link rel="apple-touch-icon" href="https://ucbchivilcoy.com.ar/faviconIgle.ico" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Actividades — Iglesia Centro Bíblico Chivilcoy" />
-  <meta property="og:description" content="Conocé los horarios de culto, estudios bíblicos y actividades de la iglesia." />
+  <meta property="og:description" content="Cultos, estudios y videos de nuestras reuniones. Domingos 19 hs · Miércoles 20 hs." />
   <meta property="og:image" content="https://ucbchivilcoy.com.ar/iglesia.jpg" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:site_name" content="Iglesia Centro Bíblico Chivilcoy" />
@@ -29,119 +29,66 @@
     :root {
       --orange: #E85D04;
       --orange-dark: #D9480F;
-      --orange-light: #F48C06;
       --orange-soft: #FFF4EB;
       --white: #FFFFFF;
       --off-white: #FFFBF7;
       --text: #1A1A1A;
       --text-muted: #5A5A5A;
-      --gray: #F5F5F5;
       --shadow: 0 10px 40px rgba(232, 93, 4, 0.12);
       --radius: 16px;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', system-ui, sans-serif;
       color: var(--text);
       background: var(--off-white);
       line-height: 1.6;
     }
-
-    /* ========== NAV ========== */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(232, 93, 4, 0.1);
       transition: box-shadow 0.3s;
     }
     nav.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-
     .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.9rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: 1100px; margin: 0 auto; padding: 0.9rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
     .logo-nav {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: var(--text); font-weight: 700; font-size: 1rem;
     }
     .logo-nav .cross {
-      width: 28px; height: 28px;
-      background: var(--orange);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 700;
+      width: 28px; height: 28px; background: var(--orange); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 1.1rem; font-weight: 700;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
     .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
+      text-decoration: none; color: var(--text-muted);
+      font-weight: 500; font-size: 0.95rem; transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--orange); }
-    .nav-links a.active { color: var(--orange); font-weight: 600; }
-
+    .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+    .nav-links a.active { font-weight: 600; }
     .nav-cta {
-      background: var(--orange);
-      color: white !important;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      font-weight: 600 !important;
+      background: var(--orange); color: white !important;
+      padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 600 !important;
     }
-    .nav-cta:hover {
-      background: var(--orange-dark);
-      color: white !important;
-    }
-
+    .nav-cta:hover { background: var(--orange-dark); color: white !important; }
     .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text);
+      display: none; background: none; border: none;
+      font-size: 1.5rem; cursor: pointer; color: var(--text);
     }
-
-    /* ========== PAGE HERO ========== */
     .page-hero {
       background: linear-gradient(160deg, var(--orange) 0%, var(--orange-dark) 55%, #C2410C 100%);
-      color: white;
-      text-align: center;
-      padding: 8rem 1.5rem 3.5rem;
-      position: relative;
-      overflow: hidden;
+      color: white; text-align: center;
+      padding: 8rem 1.5rem 3.5rem; position: relative; overflow: hidden;
     }
     .page-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background:
         radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%);
@@ -150,192 +97,161 @@
     .page-hero-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
     .page-hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 4.5vw, 2.8rem);
-      font-weight: 700;
-      margin-bottom: 0.6rem;
+      font-size: clamp(2rem, 4.5vw, 2.8rem); font-weight: 700; margin-bottom: 0.6rem;
     }
-    .page-hero p {
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
-
-    /* ========== SECTIONS ========== */
+    .page-hero p { font-size: 1.1rem; opacity: 0.95; }
     section { padding: 4rem 1.5rem; }
     .container { max-width: 1100px; margin: 0 auto; }
-
     .section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.6rem, 3.5vw, 2.1rem);
-      text-align: center;
-      margin-bottom: 0.5rem;
-      color: var(--text);
+      text-align: center; margin-bottom: 0.5rem; color: var(--text);
     }
     .section-subtitle {
-      text-align: center;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin: 0 auto 2.5rem;
-      font-size: 1.05rem;
+      text-align: center; color: var(--text-muted);
+      max-width: 560px; margin: 0 auto 2.5rem; font-size: 1.05rem;
     }
-
-    /* ========== ACTIVITY CARDS ========== */
     .activities-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
     }
-
     .activity-card {
-      background: white;
-      border-radius: var(--radius);
+      background: white; border-radius: var(--radius);
       padding: 1.8rem 1.5rem;
       border: 1px solid rgba(232, 93, 4, 0.12);
       box-shadow: 0 4px 16px rgba(0,0,0,0.04);
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-    .activity-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: rgba(232, 93, 4, 0.3);
-    }
-
+    .activity-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .activity-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--orange-soft);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+      width: 48px; height: 48px; background: var(--orange-soft);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem; margin-bottom: 1rem;
     }
-
     .activity-card h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      color: var(--text);
-      margin-bottom: 0.4rem;
+      font-size: 1.25rem; color: var(--text); margin-bottom: 0.4rem;
     }
-
     .activity-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1rem;
-      margin-bottom: 0.8rem;
-      font-size: 0.9rem;
-      color: var(--orange);
-      font-weight: 600;
+      display: flex; flex-wrap: wrap; gap: 0.6rem 1rem;
+      margin-bottom: 0.8rem; font-size: 0.9rem;
+      color: var(--orange); font-weight: 600;
     }
-    .activity-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
+    .activity-card p { color: var(--text-muted); font-size: 0.95rem; }
+    .gallery { background: white; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
     }
-
-    .activity-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+    .gallery-item {
+      border-radius: var(--radius); overflow: hidden;
+      aspect-ratio: 4/3; background: var(--orange-soft);
+      position: relative; box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
-
-    /* ========== NOTE BOX ========== */
-    .note-box {
-      background: var(--orange-soft);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.8rem;
-      margin-top: 2.5rem;
-      border: 1px solid rgba(232, 93, 4, 0.15);
-      text-align: center;
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.35s;
     }
-    .note-box p {
-      color: var(--text-muted);
-      font-size: 1rem;
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item .caption {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 0.7rem 1rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      color: white; font-size: 0.9rem; font-weight: 500;
     }
-    .note-box a {
-      color: var(--orange);
-      font-weight: 600;
-      text-decoration: none;
+    .videos { background: var(--off-white); }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
-    .note-box a:hover { text-decoration: underline; }
-
-    /* ========== BACK LINK ========== */
-    .back-wrap {
-      text-align: center;
-      padding: 0 1.5rem 3rem;
+    .video-card {
+      background: white; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .video-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; background: #111;
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+    .video-info { padding: 1rem 1.2rem 1.2rem; }
+    .video-info h3 {
+      font-size: 1rem; font-weight: 600; color: var(--text);
+      margin-bottom: 0.25rem; line-height: 1.35;
+    }
+    .video-info p { font-size: 0.85rem; color: var(--text-muted); }
+    .btn-youtube {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 2rem; padding: 0.85rem 1.6rem;
+      background: #FF0000; color: white; border-radius: 50px;
+      font-weight: 600; text-decoration: none; font-size: 1rem;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-youtube:hover { background: #cc0000; transform: translateY(-2px); }
+    .videos-cta { text-align: center; }
+    .lugar { background: white; }
+    .lugar-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2rem; align-items: center;
+    }
+    .lugar-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; margin-bottom: 1rem;
+    }
+    .lugar-info p {
+      color: var(--text-muted); margin-bottom: 0.7rem;
+      display: flex; gap: 0.5rem; align-items: flex-start;
+    }
+    .lugar-photo {
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow); aspect-ratio: 4/3;
+    }
+    .lugar-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.6rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      transition: all 0.25s;
-      border: 2px solid transparent;
-      cursor: pointer;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 1.6rem; border-radius: 50px;
+      font-weight: 600; font-size: 1rem;
+      text-decoration: none; transition: all 0.25s;
+      border: 2px solid transparent; cursor: pointer;
     }
-    .btn-primary {
-      background: var(--orange);
-      color: white;
-    }
+    .btn-primary { background: var(--orange); color: white; }
     .btn-primary:hover {
-      background: var(--orange-dark);
-      transform: translateY(-2px);
+      background: var(--orange-dark); transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(232, 93, 4, 0.25);
     }
     .btn-outline-dark {
-      background: transparent;
-      color: var(--text);
+      background: transparent; color: var(--text);
       border-color: rgba(0,0,0,0.15);
     }
-    .btn-outline-dark:hover {
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    /* ========== FOOTER ========== */
+    .btn-outline-dark:hover { border-color: var(--orange); color: var(--orange); }
+    .back-wrap { text-align: center; padding: 0 1.5rem 3rem; }
     footer {
-      background: #1A1A1A;
-      color: rgba(255,255,255,0.75);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
+      background: #1A1A1A; color: rgba(255,255,255,0.75);
+      padding: 2.5rem 1.5rem; text-align: center;
     }
     footer .footer-brand {
       font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: white;
-      margin-bottom: 0.5rem;
+      font-size: 1.2rem; color: white; margin-bottom: 0.5rem;
     }
     footer .verse-footer {
-      font-style: italic;
-      font-size: 0.9rem;
-      margin-bottom: 1.2rem;
-      opacity: 0.8;
+      font-style: italic; font-size: 0.9rem; margin-bottom: 1.2rem; opacity: 0.8;
     }
-    footer .copy {
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
-
-    /* ========== WHATSAPP ========== */
+    footer .copy { font-size: 0.85rem; opacity: 0.6; }
     .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      width: 60px; height: 60px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      text-decoration: none; animation: pulse-wa 2.5s infinite;
       transition: transform 0.25s, box-shadow 0.25s;
-      text-decoration: none;
-      animation: pulse-wa 2.5s infinite;
     }
     .whatsapp-float:hover {
       transform: scale(1.1);
@@ -343,56 +259,35 @@
     }
     .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
     .whatsapp-float .tooltip {
-      position: absolute;
-      right: 72px;
-      background: #1A1A1A;
-      color: white;
-      padding: 0.5rem 0.9rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
+      position: absolute; right: 72px; background: #1A1A1A; color: white;
+      padding: 0.5rem 0.9rem; border-radius: 8px; font-size: 0.85rem;
+      font-weight: 500; white-space: nowrap; opacity: 0;
+      pointer-events: none; transition: opacity 0.2s;
     }
     .whatsapp-float:hover .tooltip { opacity: 1; }
-
     @keyframes pulse-wa {
       0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
       70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
-
-    /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0; right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 1rem 1.5rem 1.5rem;
-        gap: 0.8rem;
+        display: none; position: absolute; top: 100%; left: 0; right: 0;
+        background: white; flex-direction: column;
+        padding: 1rem 1.5rem 1.5rem; gap: 0.8rem;
         border-bottom: 1px solid rgba(0,0,0,0.08);
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       }
       .nav-links.open { display: flex; }
       .menu-toggle { display: block; }
-      .whatsapp-float {
-        bottom: 18px;
-        right: 18px;
-        width: 56px;
-        height: 56px;
-      }
+      .lugar-grid { grid-template-columns: 1fr; }
+      .whatsapp-float { bottom: 18px; right: 18px; width: 56px; height: 56px; }
       .whatsapp-float .tooltip { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
       <a href="index.html" class="logo-nav">
@@ -411,103 +306,141 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="page-hero">
     <div class="page-hero-content">
       <h1>Actividades</h1>
-      <p>Reuniones y encuentros de la Iglesia Centro Bíblico Chivilcoy</p>
+      <p>Reuniones, el lugar y videos de la Iglesia Centro Bíblico Chivilcoy</p>
     </div>
   </header>
 
-  <!-- ACTIVIDADES -->
   <section>
     <div class="container">
-      <h2 class="section-title">Horarios y encuentros</h2>
-      <p class="section-subtitle">
-        Te esperamos. Si tenés dudas sobre horarios, escribinos por WhatsApp o redes.
-      </p>
-
+      <h2 class="section-title">Horarios de reunión</h2>
+      <p class="section-subtitle">Te esperamos en Ituzaingó 225, Chivilcoy</p>
       <div class="activities-grid">
-
         <article class="activity-card">
           <div class="activity-icon">⛪</div>
           <h3>Culto dominical</h3>
           <div class="activity-meta">
             <span>📅 Domingo</span>
-            <span>🕐 A confirmar</span>
+            <span>🕐 19:00 hs</span>
           </div>
-          <p>
-            Reunión principal de la iglesia: adoración, predicación de la Palabra y comunión.
-          </p>
+          <p>Reunión principal: adoración, predicación de la Palabra y comunión.</p>
         </article>
-
         <article class="activity-card">
           <div class="activity-icon">📖</div>
-          <h3>Estudio bíblico</h3>
+          <h3>Reunión de mitad de semana</h3>
           <div class="activity-meta">
-            <span>📅 A confirmar</span>
-            <span>🕐 A confirmar</span>
+            <span>📅 Miércoles</span>
+            <span>🕐 20:00 hs</span>
           </div>
-          <p>
-            Estudio sistemático de las Escrituras para crecer en el conocimiento de Cristo.
-          </p>
+          <p>Estudio bíblico y tiempo de oración en comunidad.</p>
         </article>
-
-        <article class="activity-card">
-          <div class="activity-icon">🙏</div>
-          <h3>Reunión de oración</h3>
-          <div class="activity-meta">
-            <span>📅 A confirmar</span>
-            <span>🕐 A confirmar</span>
-          </div>
-          <p>
-            Tiempo de oración comunitaria, intercesión y búsqueda del Señor juntos.
-          </p>
-        </article>
-
-        <article class="activity-card">
-          <div class="activity-icon">👥</div>
-          <h3>Reunión de jóvenes</h3>
-          <div class="activity-meta">
-            <span>📅 A confirmar</span>
-            <span>🕐 A confirmar</span>
-          </div>
-          <p>
-            Encuentro para jóvenes: Palabra, comunión y crecimiento en la fe.
-          </p>
-        </article>
-
-        <article class="activity-card">
-          <div class="activity-icon">🧒</div>
-          <h3>Ministerio de niños</h3>
-          <div class="activity-meta">
-            <span>📅 A confirmar</span>
-            <span>🕐 A confirmar</span>
-          </div>
-          <p>
-            Enseñanza bíblica adaptada para los más chicos durante las reuniones.
-          </p>
-        </article>
-
         <article class="activity-card">
           <div class="activity-icon">📍</div>
-          <h3>Lugar de reunión</h3>
+          <h3>Lugar</h3>
           <div class="activity-meta">
             <span>Ituzaingó 225, Chivilcoy</span>
           </div>
-          <p>
-            Todas las actividades se realizan en nuestra sede, salvo indicación especial.
-          </p>
+          <p>Todas las reuniones se realizan en nuestra sede, salvo aviso especial.</p>
         </article>
-
       </div>
+    </div>
+  </section>
 
-      <div class="note-box">
-        <p>
-          Los horarios pueden actualizarse. Para confirmar o consultar,
-          <a href="https://wa.me/5491131525465?text=Hola%2C%20quiero%20consultar%20sobre%20las%20actividades%20de%20la%20iglesia" target="_blank" rel="noopener">escribinos por WhatsApp</a>
-          o por nuestras redes sociales.
-        </p>
+  <section class="lugar" id="lugar">
+    <div class="container">
+      <h2 class="section-title">Nuestro lugar</h2>
+      <p class="section-subtitle">Ituzaingó 225, Chivilcoy, Buenos Aires</p>
+      <div class="lugar-grid">
+        <div class="lugar-info">
+          <h3>Venite a conocernos</h3>
+          <p><span>📍</span> <span>Ituzaingó 225<br>Chivilcoy, Buenos Aires, Argentina</span></p>
+          <p><span>🕐</span> <span>Domingos 19 hs · Miércoles 20 hs</span></p>
+          <p><span>💬</span> <span>Escribinos por WhatsApp o redes si es tu primera visita.</span></p>
+          <p style="margin-top: 1.2rem;">
+            <a href="https://www.google.com/maps/search/?api=1&query=Ituzaingó+225,+Chivilcoy,+Buenos+Aires" target="_blank" rel="noopener" class="btn btn-primary">
+              Abrir en Google Maps
+            </a>
+          </p>
+        </div>
+        <div class="lugar-photo">
+          <img src="https://ucbchivilcoy.com.ar/iglesia.jpg" alt="Iglesia Centro Bíblico Chivilcoy" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <h2 class="section-title">Galería</h2>
+      <p class="section-subtitle">Imágenes de nuestras reuniones y del lugar</p>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://ucbchivilcoy.com.ar/iglesia.jpg" alt="Iglesia Centro Bíblico" loading="lazy" />
+          <div class="caption">Nuestra sede</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://ucbchivilcoy.com.ar/iglesia.jpg" alt="Reunión de la iglesia" loading="lazy" />
+          <div class="caption">Reunión de culto</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://ucbchivilcoy.com.ar/iglesia.jpg" alt="Comunidad" loading="lazy" />
+          <div class="caption">Comunidad</div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem; color:var(--text-muted); font-size:0.95rem;">
+        Subí fotos propias al hosting y cambiá el atributo src de cada imagen.
+      </p>
+    </div>
+  </section>
+
+  <section class="videos" id="videos">
+    <div class="container">
+      <h2 class="section-title">Videos de reuniones</h2>
+      <p class="section-subtitle">Predicaciones y momentos de la iglesia en YouTube</p>
+      <div class="videos-grid">
+        <article class="video-card">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/ctb86LocpKs" title="Un llamado a la santificación" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Un llamado a la santificación (1 Tes. 4:3-5)</h3>
+            <p>Predicación · Iglesia Centro Bíblico Chivilcoy</p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/_bSyHD9shuY" title="Viviendo para agradar a Dios" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Viviendo para agradar a Dios (1 Tes. 4:1-2)</h3>
+            <p>Predicación · Iglesia Centro Bíblico Chivilcoy</p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/xRte3kFzcYI" title="25 Aniversario" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>25 Aniversario Iglesia Centro Bíblico</h3>
+            <p>Momentos especiales de la iglesia</p>
+          </div>
+        </article>
+        <article class="video-card">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/Pzd111g6Uis" title="Rey de paz - Coro UCB" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3>«Rey de paz» — Coro UCB Chivilcoy</h3>
+            <p>Adoración · Coro de la iglesia</p>
+          </div>
+        </article>
+      </div>
+      <div class="videos-cta">
+        <a href="https://www.youtube.com/@IglesiaCentroBiblicoChivilcoy" target="_blank" rel="noopener" class="btn-youtube">
+          ▶ Ver más en YouTube
+        </a>
       </div>
     </div>
   </section>
@@ -516,19 +449,14 @@
     <a href="index.html" class="btn btn-outline-dark">← Volver al inicio</a>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-brand">Iglesia Centro Bíblico Chivilcoy</div>
     <p class="verse-footer">«Para alabanza de la gloria de su gracia» — Efesios 1:6</p>
     <p class="copy">© 2026 Iglesia Centro Bíblico Chivilcoy · Todos los derechos reservados</p>
   </footer>
 
-  <!-- WHATSAPP -->
   <a href="https://wa.me/5491131525465?text=Hola%2C%20quiero%20consultar%20sobre%20las%20actividades%20de%20la%20iglesia"
-     class="whatsapp-float"
-     target="_blank"
-     rel="noopener"
-     aria-label="Escribinos por WhatsApp">
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
     <span class="tooltip">Escribinos por WhatsApp</span>
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -540,12 +468,9 @@
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 20);
     });
-
     const menuBtn = document.getElementById('menuBtn');
     const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
